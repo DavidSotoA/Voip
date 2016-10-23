@@ -20,8 +20,8 @@ CREATE TABLE boleto(
   pelicula int(3),
   usuario varchar(4),
   PRIMARY KEY(pelicula,usuario),
-  CONSTRAINT FOREIGN KEY (pelicula) REFERENCES pelicula(id),
-  CONSTRAINT FOREIGN KEY (usuario) REFERENCES usuario(codigo)
+  CONSTRAINT FOREIGN KEY (pelicula) REFERENCES pelicula(id) ON DELETE CASCADE,
+  CONSTRAINT FOREIGN KEY (usuario) REFERENCES usuario(codigo) ON DELETE CASCADE
 )ENGINE=INNODB;
 
 INSERT INTO pelicula(nombre,descripcion,genero,precio,sala,formato,fecha) values('el coco',
@@ -42,24 +42,24 @@ INSERT INTO usuario(codigo,nombre) values('222','andres');
 INSERT INTO usuario(codigo,nombre) values('333','manuela');
 
 INSERT INTO pelicula(nombre,descripcion,genero,precio,sala,formato,fecha) values('la chica del tren',
-  'En este thriller, Rachel (Emily Blunt), quien esta devastada por su reciente divorcio, pasa los días fantaseando con una pareja aparentemente perfecta que ve todas las tardes desde el tren, hasta que un dia se da cuenta que algo impactante esta pasando y se envuelve en el misterio',
+  'En este thriller, Rachel (Emily Blunt), quien esta devastada por su reciente divorcio, pasa los dias fantaseando con una pareja aparentemente perfecta que ve las tardes desde el tren, hasta que un dia se entera que algo impactante esta pasando y se envuelve en el misterio',
   'Thriller',20000,'3','simple','2016-10-12 17:00:00');
 
 INSERT INTO pelicula(nombre,descripcion,genero,precio,sala,formato,fecha) values('la chica del tren',
-  'En este thriller, Rachel (Emily Blunt), quien esta devastada por su reciente divorcio, pasa los días fantaseando con una pareja aparentemente perfecta que ve todas las tardes desde el tren, hasta que un dia se da cuenta que algo impactante esta pasando y se envuelve en el misterio',
+  'En este thriller, Rachel (Emily Blunt), quien esta devastada por su reciente divorcio, pasa los dias fantaseando con una pareja aparentemente perfecta que ve las tardes desde el tren, hasta que un dia se entera que algo impactante esta pasando y se envuelve en el misterio',
   'Thriller',20000,'3','simple','2016-10-12 20:00:00');
 
 INSERT INTO pelicula(nombre,descripcion,genero,precio,sala,formato,fecha) values('la chica del tren',
-  'En este thriller, Rachel (Emily Blunt), quien esta devastada por su reciente divorcio, pasa los días fantaseando con una pareja aparentemente perfecta que ve todas las tardes desde el tren, hasta que un dia se da cuenta que algo impactante esta pasando y se envuelve en el misterio',
+  'En este thriller, Rachel (Emily Blunt), quien esta devastada por su reciente divorcio, pasa los dias fantaseando con una pareja aparentemente perfecta que ve las tardes desde el tren, hasta que un dia se entera que algo impactante esta pasando y se envuelve en el misterio',
   'Thriller',20000,'3','3d','2016-10-14 20:00:00');
 
 INSERT INTO pelicula(nombre,descripcion,genero,precio,sala,formato,fecha) values('inferno',
-  'Ron Howard, ganador de un Premio de la Academia, regresa para dirigir Inferno, el mas reciente best seller en la serie multimillonaria de Robert Landon (Da Vinci Code), de Dan Brown, que presenta al famoso simbolista (interpretado otra vez por Tom Hanks) en busca de pistas relativas al excelso Dante',
+  'Ron Howard, ganador de un Premio de la Academia, regresa para dirigir Inferno, el mas reciente best seller en la serie multimillonaria de Robert, que presenta al famoso simbolista (interpretado otra vez por Tom) en busca de pistas relativas al ecelso Dante',
   'Thriller',20000,'3','3d','2016-10-18 11:00:00');
 
 INSERT INTO pelicula(nombre,descripcion,genero,precio,sala,formato,fecha) values('inferno',
-  'Ron Howard, ganador de un Premio de la Academia, regresa para dirigir Inferno, el mas reciente best seller en la serie multimillonaria de Robert Langdon (Da Vinci Code), de Dan Brown, que presenta al famoso simbolista (interpretado otra vez por Tom Hanks) en busca de pistas relativas al excelso Dante',
-  'Thriller',20000,'3','simple','2016-10-20 16:00:00');
+  'Ron Howard, ganador de un Premio de la Academia, regresa para dirigir Inferno, el mas reciente best seller en la serie multimillonaria de Robert, que presenta al famoso simbolista (interpretado otra vez por Tom) en busca de pistas relativas al ecelso Dante',
+    'Thriller',20000,'3','simple','2016-10-20 16:00:00');
 
 INSERT INTO pelicula(nombre,descripcion,genero,precio,sala,formato,fecha) values('conexion mortal',
   'Clayton Riddell se encuentra en Boston celebrando el exito de su ultima novela grafica y quiere regresar a casa y ver a su familia. Pero de un momento a otro se desata un caos apocaliptico: un misterioso fenomeno que parece contagiarse por la senal de los telefonos moviles esta convirtiendo a la gente en monstruos sedientos de sangre',
